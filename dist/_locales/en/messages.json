@@ -1,0 +1,280 @@
+{
+  "extName": {
+    "message": "SocialBuddy",
+    "description": "Extension display name"
+  },
+  "extShortName": {
+    "message": "SocialBuddy",
+    "description": "Short name shown under the toolbar icon"
+  },
+  "extDescription": {
+    "message": "Back up Threads / Instagram / Facebook posts to your own computer while browsing. All data stays local — nothing is uploaded.",
+    "description": "Chrome Web Store description"
+  },
+  "actionTitle": {
+    "message": "SocialBuddy",
+    "description": "Tooltip on toolbar icon"
+  },
+  "sidePanelTitle": {
+    "message": "SocialBuddy",
+    "description": "Side panel heading"
+  },
+  "sidePanelSubtitle": {
+    "message": "Data stays on your machine",
+    "description": "Side panel subtitle / privacy reminder"
+  },
+  "labelKeyword": { "message": "Keyword" },
+  "searchPlaceholder": { "message": "Search post text or author" },
+  "labelPlatform": { "message": "Platform" },
+  "platformAll": { "message": "All" },
+  "labelExportFormat": { "message": "Export format" },
+  "btnRefresh": { "message": "Refresh" },
+  "btnExport": { "message": "Export" },
+  "btnClear": { "message": "Clear" },
+  "statusLoading": { "message": "Loading…" },
+  "statusEmpty": { "message": "No posts yet. Open Threads / IG / FB and they will be captured automatically." },
+  "statusEmptyFiltered": { "message": "Matching posts: 0" },
+  "statusShowing": {
+    "message": "Showing $SHOWN$ / $TOTAL$",
+    "placeholders": {
+      "shown": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  },
+  "statusExportDone": {
+    "message": "Exported $FORMAT$ (see the browser's Downloads bar).",
+    "placeholders": {
+      "format": { "content": "$1" }
+    }
+  },
+  "statusCleared": { "message": "All posts cleared." },
+  "confirmClearAll": { "message": "Are you sure you want to clear all captured posts? This cannot be undone." },
+  "linkOriginal": { "message": "Original" },
+  "optionsTitle": { "message": "SocialBuddy · Settings" },
+  "optionsIntro": { "message": "Adjust capture behavior here. Your data always stays on your computer, never uploaded to the cloud." },
+  "sectionCapture": { "message": "Capture" },
+  "sectionPlatforms": { "message": "Platforms" },
+  "sectionRetention": { "message": "Data Retention" },
+  "toggleAutoCapture": { "message": "Auto-capture posts while browsing" },
+  "toggleShowMediaPreview": { "message": "Show image preview in sidebar (sends requests to platform CDNs)" },
+  "retentionLabel": { "message": "Auto-delete posts older than (days, 0 = keep forever)" },
+  "btnSave": { "message": "Save" },
+  "savedAt": {
+    "message": "Saved ($TIME$)",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "saveMismatch": { "message": "⚠ Data mismatch after saving. Please try again." },
+  "homePageTitle": { "message": "SocialBuddy" },
+  "homePageSubtitle": { "message": "Your data stays on your device" },
+  "toggleTheme": { "message": "Toggle Theme" },
+  "scheduleIndicator": { "message": "Schedule" },
+  "navSearchResults": { "message": "Search Results" },
+  "navAccountAnalysis": { "message": "Account Analysis" },
+  "navBackupRecords": { "message": "Backup Records" },
+  "navReports": { "message": "Reports" },
+  "threadsKeywordSearch": { "message": "Threads Keyword Search" },
+  "labelCategory": { "message": "Category" },
+  "customKeyword": { "message": "-- Custom Keywords --" },
+  "btnImportCategory": { "message": "📥 Import Category" },
+  "btnExportCategory": { "message": "📤 Export Category" },
+  "labelSort": { "message": "Sort" },
+  "sortPopular": { "message": "Popular (Most Relevant)" },
+  "sortRecent": { "message": "Recent" },
+  "labelDepth": { "message": "Depth" },
+  "depthShallow": { "message": "Shallow (~30 sec per keyword, 1 round)" },
+  "depthMedium": { "message": "Medium (~60 sec per keyword, 2 rounds)" },
+  "depthDeep": { "message": "Deep (~120 sec per keyword, 3 rounds)" },
+  "depthContinuous": { "message": "Continuous (infinite rounds, stop manually)" },
+  "btnStartSearch": { "message": "Start Searching Threads" },
+  "btnStopSearch": { "message": "Stop Search and Export" },
+  "replyModeTitle": { "message": "What to capture for replies?" },
+  "replySelfOnly": { "message": "Just this comment" },
+  "replySelfOnlyHint": { "message": "No context, cleanest" },
+  "replyWithParent": { "message": "Comment + Original post" },
+  "replyWithParentHint": { "message": "See what it's replying to" },
+  "replyWithThread": { "message": "Original + All replies" },
+  "replyWithThreadHint": { "message": "Complete thread (visible range)" },
+  "labelFilter": { "message": "Filter Posts" },
+  "allPlatforms": { "message": "All" },
+  "autoScreenshot": { "message": "Auto Screenshot" },
+  "capturedPosts": { "message": "Captured Posts" },
+  "noPostsLoading": { "message": "Loading…" },
+  "noPostsEmpty": { "message": "No posts yet. Open Threads/Instagram/Facebook to start capturing." },
+  "noPostsFiltered": { "message": "No matching posts: 0" },
+  "viewOriginal": { "message": "Original" },
+  "replyingTo": { "message": "Replying to:" },
+  "couldNotLoad": { "message": "(Could not load original content)" },
+  "threadReplies": { "message": "Thread Replies" },
+  "editHistory": { "message": "✏️ Edited ×" },
+  "viewEditHistory": { "message": "View Edit History" },
+  "historyTitle": { "message": "Edit History" },
+  "historyMeta": {
+    "message": "@$1 · $2 · $3 versions",
+    "placeholders": {
+      "author": { "content": "$1" },
+      "platform": { "content": "$2" },
+      "count": { "content": "$3" }
+    }
+  },
+  "oldVersion": { "message": "Old Version" },
+  "newVersion": { "message": "New Version" },
+  "diffStats": {
+    "message": "+$1  −$2  (same $3 chars)",
+    "placeholders": {
+      "added": { "content": "$1" },
+      "removed": { "content": "$2" },
+      "equal": { "content": "$3" }
+    }
+  },
+  "quickReply": { "message": "Quick Reply" },
+  "cannedPersonaTab1": { "message": "Professional" },
+  "cannedPersonaTab2": { "message": "Friendly" },
+  "cannedPersonaTab3": { "message": "Playful" },
+  "selectReply": { "message": "-- Select Reply --" },
+  "copyToClipboard": { "message": "📋" },
+  "fillReplyBox": { "message": "📝" },
+  "cannedHint": { "message": "Suggested reply, please adjust before sending" },
+  "btnImportTemplates": { "message": "📥 Import" },
+  "btnExportTemplates": { "message": "📤 Export" },
+  "btnResetDefaults": { "message": "↩ Reset Defaults" },
+  "copied": { "message": "Copied! Please adjust before sending" },
+  "filled": { "message": "Filled in! Please adjust before sending" },
+  "copyFallback": { "message": "Could not fill, copied to clipboard" },
+  "export": { "message": "Export" },
+  "labelFormat": { "message": "Format (Multiple Allowed)" },
+  "layoutFlat": { "message": "Flat List" },
+  "layoutPaired": { "message": "With Original" },
+  "layoutThreaded": { "message": "Threaded" },
+  "autoExport": { "message": "Auto Export" },
+  "autoExportInterval": { "message": "Auto Export Interval" },
+  "every3Min": { "message": "Every 3 Minutes" },
+  "every5Min": { "message": "Every 5 Minutes" },
+  "every10Min": { "message": "Every 10 Minutes" },
+  "storageWarning": { "message": "Storage Warning" },
+  "storageNear": { "message": "Storage Usage" },
+  "storageDanger": { "message": "Storage Nearly Full" },
+  "exportAndClear": { "message": "Export Then Clear" },
+  "searchStatus": {
+    "message": "Preparing to search $1 keywords ($2)…",
+    "placeholders": {
+      "count": { "content": "$1" },
+      "depth": { "content": "$2" }
+    }
+  },
+  "searchFailed": { "message": "Search failed" },
+  "searchStopping": { "message": "Stopping search…" },
+  "searchContinue": { "message": "Resuming search…" },
+  "searchProgress": {
+    "message": "Round $1 · Searching ($2/$3): $4",
+    "placeholders": {
+      "round": { "content": "$1" },
+      "current": { "content": "$2" },
+      "total": { "content": "$3" },
+      "keyword": { "content": "$4" }
+    }
+  },
+  "searchDone": {
+    "message": "Search complete! Searched $1 keywords total.",
+    "placeholders": {
+      "count": { "content": "$1" }
+    }
+  },
+  "searchStopped": { "message": "Stopped" },
+  "searchRequired": { "message": "Please add at least one keyword first." },
+  "exportSuccess": {
+    "message": "Exported $1 (saved to Downloads/socialbuddy/$2/<format>/)",
+    "placeholders": {
+      "format": { "content": "$1" },
+      "folder": { "content": "$2" }
+    }
+  },
+  "importSuccess": {
+    "message": "Import successful ($1 categories)",
+    "placeholders": {
+      "count": { "content": "$1" }
+    }
+  },
+  "importFailed": { "message": "Import failed" },
+  "exportFailed": { "message": "Export failed" },
+  "clearFailed": { "message": "Clear failed" },
+  "resetDefaults": { "message": "Defaults restored" },
+  "resetFailed": { "message": "Reset failed" },
+  "importFormatError": { "message": "Format error: No valid category data found" },
+  "csvFormatError": { "message": "CSV format error: Need at least 4 columns (Category, Tone, Title, Content)" },
+  "noDataToExport": { "message": "No keyword categories to export" },
+  "noTemplates": { "message": "No templates to export" },
+  "noCannedMessages": { "message": "(No templates yet)" },
+  "confirmClear": { "message": "Are you sure you want to clear all captured posts? This cannot be undone." },
+  "confirmReset": { "message": "Are you sure you want to reset to defaults? This will delete all custom templates." },
+  "removeKeyword": {
+    "message": "Remove \"$1\"",
+    "placeholders": {
+      "keyword": { "content": "$1" }
+    }
+  },
+  "onboardingStep": {
+    "message": "Step $1 / 5",
+    "placeholders": {
+      "step": { "content": "$1" }
+    }
+  },
+  "onboardingDownloadPath": { "message": "Download Path" },
+  "onboardingDownloadPathDesc": { "message": "Exported files will be saved to your Downloads folder. You can set a custom subfolder in settings." },
+  "onboardingCategories": { "message": "Keyword Categories" },
+  "onboardingCategoriesDesc": { "message": "Create keyword categories in settings for quick access in the sidebar." },
+  "onboardingWatermark": { "message": "File Watermark" },
+  "onboardingWatermarkDesc": { "message": "Exported files are marked with your name. You can add custom labels in settings (e.g., 'Work')." },
+  "onboardingSchedule": { "message": "Scheduled Search" },
+  "onboardingScheduleDesc": { "message": "Use the 'Scheduled Tasks' section in settings to have Chrome search and export in the background." },
+  "onboardingStart": { "message": "Get Started" },
+  "onboardingStartDesc": { "message": "Try it now! Enter a keyword above and click 'Start Searching Threads'." },
+  "onboardingSkip": { "message": "Skip" },
+  "onboardingPrev": { "message": "Previous" },
+  "onboardingNext": { "message": "Next" },
+  "onboardingDone": { "message": "Done" },
+  "onboardingTitle": { "message": "SocialBuddy · Settings" },
+  "searchResultsTitle": { "message": "Search Results" },
+  "backupRecordsTitle": { "message": "Backup Records" },
+  "accountAnalysisTitle": { "message": "Account Analysis" },
+  "reportsTitle": { "message": "Search Reports" },
+  "labelKeywordFilter": { "message": "Keyword" },
+  "filterKeyword": { "message": "Filter Keyword" },
+  "labelTimeRange": { "message": "Time Range" },
+  "last7Days": { "message": "Last 7 Days" },
+  "last30Days": { "message": "Last 30 Days" },
+  "last90Days": { "message": "Last 90 Days" },
+  "btnExportCsv": { "message": "Export CSV" },
+  "btnExportJson": { "message": "Export JSON" },
+  "btnBatchArchive": { "message": "Batch Archive" },
+  "btnExportMerged": { "message": "Export Merged Report" },
+  "loadingStatus": { "message": "Loading…" },
+  "backupTotalCount": { "message": "Total Backups" },
+  "backupUsed": { "message": "Used" },
+  "backupLastBackup": { "message": "Last Backup" },
+  "backupNone": { "message": "None" },
+  "searchBackup": { "message": "Search Backups" },
+  "backupsList": { "message": "Backup Records List" },
+  "accountsTable": { "message": "Accounts List" },
+  "accountName": { "message": "Account" },
+  "accountPlatform": { "message": "Platform" },
+  "accountFirstSeen": { "message": "First Seen" },
+  "accountLastActive": { "message": "Last Active" },
+  "accountPostCount": { "message": "Posts" },
+  "accountReplyCount": { "message": "Replies" },
+  "accountTotal": { "message": "Total" },
+  "accountActivity": { "message": "Activity" },
+  "accountActions": { "message": "Actions" },
+  "detailBack": { "message": "← Back" },
+  "stickinessMatrix": { "message": "Stickiness Matrix" },
+  "followingAccount": { "message": "Following Account" },
+  "replyCount": { "message": "Reply Count" },
+  "cooccurrence": { "message": "Co-occurrence" },
+  "stickinessScore": { "message": "Stickiness Score" },
+  "interestingArticles": { "message": "Interesting Articles" },
+  "contactInfo": { "message": "Contact Info" },
+  "keywordHitStats": { "message": "Keyword Hit Statistics" },
+  "anomalyAlerts": { "message": "Anomaly Alerts" },
+  "newPosts": { "message": "New Posts" },
+  "trendAnalysis": { "message": "Cross-Report Trends" },
+  "reportsList": { "message": "Search Reports List" }
+}

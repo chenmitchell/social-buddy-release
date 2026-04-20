@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SocialBuddy · 社群小幫手</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="side-panel.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <h1 class="sb-title" data-i18n="sidePanelTitle">社群小幫手</h1>
+      <p class="sb-subtitle" data-i18n="sidePanelSubtitle">資料只存在你的電腦</p>
+      <button id="sb-theme-toggle" class="sb-theme-toggle" type="button" data-i18n-title="toggleTheme" aria-label="切換主題">
+        <span class="sb-theme-icon">🌙</span>
+      </button>
+      <a id="sb-sched-indicator" class="sb-sched-indicator" href="#" hidden
+         data-i18n-title="scheduleIndicator">
+        <span class="sb-sched-dot" aria-hidden="true"></span>
+        <span id="sb-sched-indicator-text" class="sb-sched-indicator-text">排程</span>
+      </a>
+    </header>
+
+    <!-- 導航列至分析頁面 -->
+    <nav class="sb-nav-pages" aria-label="分析工具">
+      <button id="sb-nav-search-results" type="button" class="sb-btn sb-btn-small" data-i18n="navSearchResults">搜尋結果</button>
+      <button id="sb-nav-account-analysis" type="button" class="sb-btn sb-btn-small" data-i18n="navAccountAnalysis">帳號分析</button>
+      <button id="sb-nav-backup-records" type="button" class="sb-btn sb-btn-small" data-i18n="navBackupRecords">備份紀錄</button>
+      <button id="sb-nav-reports" type="button" class="sb-btn sb-btn-small" data-i18n="navReports">報告</button>
+    </nav>
+
+    <!-- ① 搜尋設定 -->
+    <section class="sb-search-section" aria-label="Threads 關鍵字搜尋">
+      <button type="button" class="sb-section-toggle" aria-expanded="true">
+        <span class="sb-chevron">▸</span>
+        <h2 class="sb-section-title" data-i18n="threadsKeywordSearch">Threads 關鍵字搜尋</h2>
+      </button>
+      <div class="sb-section-body">
+        <label class="sb-field sb-field-inline" id="sb-category-label">
+          <span class="sb-label-text" data-i18n="labelCategory">分類</span>
+          <select id="sb-kw-category" title="選擇預設的關鍵字分類，或輸入自訂關鍵字">
+            <option value="">-- 自訂關鍵字 --</option>
+          </select>
+        </label>
+        <div class="sb-kw-io-row">
+          <button id="sb-kw-import-csv" type="button" class="sb-btn sb-btn-small" data-i18n="btnImportCategory">📥 匯入分類</button>
+          <button id="sb-kw-export-csv" type="button" class="sb-btn sb-btn-small" data-i18n="btnExportCategory">📤 匯出分類</button>
+          <input type="file" id="sb-kw-file-input" accept=".csv,.json" hidden />
+        </div>
+        <div class="sb-kw-input-row">
+          <input id="sb-kw-input" type="text" data-i18n-placeholder="searchPlaceholder" placeholder="搜尋貼文內容或作者" autocomplete="off" />
+          <button id="sb-kw-add" type="button" class="sb-btn sb-btn-small" title="新增關鍵字">+</button>
+        </div>
+        <div id="sb-kw-chips" class="sb-kw-chips" aria-label="已設定的關鍵字"></div>
+        <div id="sb-search-history" class="sb-search-history" role="region" aria-label="搜尋歷史"></div>
+        <div class="sb-search-controls">
+          <label class="sb-field sb-field-inline">
+            <span class="sb-label-text" data-i18n="labelSort">排序</span>
+            <select id="sb-search-sort">
+              <option value="popular" data-i18n="sortPopular">熱門（最相關）</option>
+              <option value="recent" data-i18n="sortRecent">最新</option>
+            </select>
+          </label>
+          <label class="sb-field sb-field-inline">
+            <span class="sb-label-text" data-i18n="labelDepth">深度</span>
+            <select id="sb-search-depth" title="深度越深，每個關鍵字停留越久、會多跑幾輪回頂捲動">
+              <option value="shallow" data-i18n="depthShallow">淺（每個約 30 秒，1 輪）</option>
+              <option value="medium" data-i18n="depthMedium">中（每個約 60 秒，2 輪）</option>
+              <option value="deep" data-i18n="depthDeep">深（每個約 120 秒，3 輪）</option>
+              <option value="continuous" data-i18n="depthContinuous">持續（無限輪，手動停止）</option>
+            </select>
+          </label>
+          <button id="sb-search-go" type="button" class="sb-btn sb-btn-primary" data-i18n="btnStartSearch">開始搜尋 Threads</button>
+          <button id="sb-search-stop" type="button" class="sb-btn sb-btn-danger" hidden data-i18n="btnStopSearch">停止搜尋並匯出</button>
+        </div>
+        <!-- 回覆擷取模式（收在搜尋設定裡面） -->
+        <details class="sb-reply-mode-details">
+          <summary class="sb-reply-mode-summary" data-i18n="replyModeTitle">回覆貼文要抓什麼</summary>
+          <div class="sb-mode-group" role="radiogroup" aria-label="回覆擷取模式">
+            <label class="sb-mode-opt">
+              <input type="radio" name="sb-reply-mode" value="self-only" />
+              <span class="sb-mode-title" data-i18n="replySelfOnly">只抓這則留言</span>
+              <span class="sb-mode-hint" data-i18n="replySelfOnlyHint">不帶上下文，最乾淨</span>
+            </label>
+            <label class="sb-mode-opt">
+              <input type="radio" name="sb-reply-mode" value="with-parent" />
+              <span class="sb-mode-title" data-i18n="replyWithParent">留言 + 被回覆的原文</span>
+              <span class="sb-mode-hint" data-i18n="replyWithParentHint">看得到前因後果</span>
+            </label>
+            <label class="sb-mode-opt">
+              <input type="radio" name="sb-reply-mode" value="with-thread" />
+              <span class="sb-mode-title" data-i18n="replyWithThread">原文 + 整串留言</span>
+              <span class="sb-mode-hint" data-i18n="replyWithThreadHint">完整討論串（可見範圍內）</span>
+            </label>
+          </div>
+        </details>
+      </div>
+      <!-- 進度條＋狀態：放在 section-body 外面，摺收時仍然可見 -->
+      <p id="sb-search-status" class="sb-search-status" role="status" aria-live="polite"></p>
+      <div id="sb-search-progress-bar" class="sb-progress-bar" hidden>
+        <div id="sb-search-progress-fill" class="sb-progress-fill"></div>
+      </div>
+    </section>
+
+    <hr class="sb-divider" />
+
+    <!-- ② 貼文清單（篩選 + 列表） -->
+    <nav class="sb-toolbar" aria-label="篩選列">
+      <label class="sb-field">
+        <span class="sb-label-text" data-i18n="labelFilter">篩選貼文</span>
+        <input id="sb-search" type="search" placeholder="多個關鍵字用空白或逗號分隔" autocomplete="off" />
+      </label>
+      <label class="sb-field">
+        <span class="sb-label-text" data-i18n="labelPlatform">平台</span>
+        <select id="sb-platform">
+          <option value="" data-i18n="allPlatforms">全部</option>
+          <option value="threads">Threads</option>
+          <option value="instagram">Instagram</option>
+          <option value="facebook">Facebook</option>
+        </select>
+      </label>
+      <label class="sb-field sb-field-inline sb-auto-screenshot-toggle">
+        <input type="checkbox" id="sb-auto-screenshot" checked />
+        <span class="sb-label-text" data-i18n="autoScreenshot">自動截圖</span>
+      </label>
+      <button id="sb-refresh" type="button" class="sb-btn" data-i18n="btnRefresh">重新整理</button>
+    </nav>
+
+    <main>
+      <button type="button" id="sb-post-toggle" class="sb-section-toggle" aria-expanded="true">
+        <span class="sb-chevron">▸</span>
+        <h2 class="sb-section-title" data-i18n="capturedPosts">已擷取貼文</h2>
+        <span id="sb-post-count" class="sb-post-count"></span>
+      </button>
+      <div id="sb-post-progress-wrap" class="sb-post-progress-wrap">
+        <div id="sb-post-progress-bar" class="sb-post-progress-bar">
+          <div id="sb-post-progress-fill" class="sb-post-progress-fill"></div>
+        </div>
+        <span id="sb-post-progress-text" class="sb-post-progress-text"></span>
+      </div>
+      <p id="sb-status" class="sb-status" role="status" aria-live="polite" data-i18n="statusLoading">讀取中…</p>
+      <div id="sb-post-body" class="sb-section-body">
+        <ol id="sb-list" class="sb-list" aria-label="已擷取的貼文"></ol>
+      </div>
+    </main>
+
+    <hr class="sb-divider" />
+
+    <!-- ③ 快速回覆 -->
+    <section class="sb-quick-reply-section" aria-label="快速回覆">
+      <button type="button" class="sb-section-toggle" aria-expanded="true">
+        <span class="sb-chevron">▸</span>
+        <h2 class="sb-section-title" data-i18n="quickReply">快速回覆</h2>
+      </button>
+      <div class="sb-section-body">
+        <div class="sb-canned-row">
+          <div id="sb-canned-persona-tabs" class="sb-canned-persona-tabs" role="tablist">
+            <button type="button" class="sb-persona-tab active" data-persona="專業穩重" role="tab" aria-selected="true" data-i18n="cannedPersonaTab1">穩重</button>
+            <button type="button" class="sb-persona-tab" data-persona="親切活潑" role="tab" aria-selected="false" data-i18n="cannedPersonaTab2">活潑</button>
+            <button type="button" class="sb-persona-tab" data-persona="年輕俏皮" role="tab" aria-selected="false" data-i18n="cannedPersonaTab3">俏皮</button>
+          </div>
+          <select id="sb-canned-select" class="sb-canned-select" title="選擇回覆範本">
+            <option value="" data-i18n="selectReply">-- 選擇回覆 --</option>
+          </select>
+          <button id="sb-canned-copy" type="button" class="sb-btn sb-btn-small" data-i18n-title="copyToClipboard" title="📋">📋</button>
+          <button id="sb-canned-fill" type="button" class="sb-btn sb-btn-small" data-i18n-title="fillReplyBox" title="📝">📝</button>
+        </div>
+        <p id="sb-canned-hint" class="sb-canned-hint" data-i18n="cannedHint">建議回覆，請調整後再送出</p>
+        <div class="sb-canned-io-row">
+          <button id="sb-canned-import-xlsx" type="button" class="sb-btn sb-btn-small" data-i18n="btnImportTemplates">📥 匯入</button>
+          <button id="sb-canned-export-xlsx" type="button" class="sb-btn sb-btn-small" data-i18n="btnExportTemplates">📤 匯出</button>
+          <button id="sb-canned-reset-defaults" type="button" class="sb-btn sb-btn-small sb-btn-danger" data-i18n="btnResetDefaults">↩ 還原預設</button>
+          <input type="file" id="sb-canned-file-input" accept=".xlsx,.json,.csv" hidden />
+        </div>
+      </div>
+    </section>
+
+    <hr class="sb-divider" />
+
+    <!-- ④ 匯出 -->
+    <section class="sb-export-section" aria-label="匯出">
+      <button type="button" class="sb-section-toggle" aria-expanded="true">
+        <span class="sb-chevron">▸</span>
+        <h2 class="sb-section-title" data-i18n="export">匯出</h2>
+      </button>
+      <div class="sb-section-body">
+        <div class="sb-export-controls">
+          <fieldset class="sb-field sb-field-formats">
+            <legend class="sb-label-text" data-i18n="labelFormat">格式（可多選）</legend>
+            <label class="sb-fmt-opt">
+              <input type="checkbox" class="sb-fmt" value="json" checked /><span>JSON</span>
+            </label>
+            <label class="sb-fmt-opt">
+              <input type="checkbox" class="sb-fmt" value="csv" checked /><span>CSV</span>
+            </label>
+            <label class="sb-fmt-opt">
+              <input type="checkbox" class="sb-fmt" value="html" checked /><span>HTML</span>
+            </label>
+            <label class="sb-fmt-opt">
+              <input type="checkbox" class="sb-fmt" value="xlsx" checked /><span>XLSX</span>
+            </label>
+            <label class="sb-fmt-opt">
+              <input type="checkbox" class="sb-fmt" value="png" checked /><span>PNG</span>
+            </label>
+          </fieldset>
+          <label class="sb-field">
+            <span class="sb-label-text" data-i18n="labelExportFormat">匯出版式</span>
+            <select id="sb-export-layout" title="依你擷取時的模式選擇對應呈現方式">
+              <option value="flat" data-i18n="layoutFlat">單則列表</option>
+              <option value="paired" data-i18n="layoutPaired">配原文</option>
+              <option value="threaded" selected data-i18n="layoutThreaded">整串</option>
+            </select>
+          </label>
+        </div>
+        <div class="sb-auto-export-row">
+          <label class="sb-auto-export-toggle">
+            <input type="checkbox" id="sb-auto-export-enabled" checked />
+            <span class="sb-label-text" data-i18n="autoExport">自動匯出</span>
+          </label>
+          <select id="sb-auto-export-interval" class="sb-auto-export-interval" data-i18n-title="autoExportInterval" title="自動匯出間隔">
+            <option value="3" data-i18n="every3Min">每 3 分鐘</option>
+            <option value="5" data-i18n="every5Min">每 5 分鐘</option>
+            <option value="10" data-i18n="every10Min">每 10 分鐘</option>
+          </select>
+        </div>
+        <div class="sb-export-actions">
+          <button id="sb-export" type="button" class="sb-btn sb-btn-primary" data-i18n="btnExport">立即匯出</button>
+          <button id="sb-clear" type="button" class="sb-btn sb-btn-danger" data-i18n="btnClear">清空</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="sb-footer">
+      <div id="sb-storage-warning" class="sb-storage-warning" role="region" aria-label="儲存空間警告" hidden>
+        <div class="sb-storage-bar-container">
+          <div id="sb-storage-bar" class="sb-storage-bar"></div>
+        </div>
+        <div id="sb-storage-text" class="sb-storage-text"></div>
+        <button id="sb-storage-action" type="button" class="sb-btn sb-btn-small" data-i18n="exportAndClear" style="display: none;">匯出後清除</button>
+      </div>
+    </footer>
+
+    <!-- 新手引導模態框（初始隱藏） -->
+    <div id="sb-onboarding-overlay" class="sb-dialog-overlay sb-onboarding-overlay" role="dialog" aria-modal="true" hidden>
+      <div class="sb-dialog-panel sb-onboarding-panel">
+        <div class="sb-dialog-header">
+          <h3 id="sb-onboarding-title" data-i18n="onboardingTitle">社群小幫手設定</h3>
+          <button id="sb-onboarding-close" type="button" class="sb-dialog-close" aria-label="關閉">×</button>
+        </div>
+        <div id="sb-onboarding-content" class="sb-onboarding-content"></div>
+        <div class="sb-onboarding-footer">
+          <button id="sb-onboarding-skip" type="button" class="sb-btn" data-i18n="onboardingSkip">跳過</button>
+          <button id="sb-onboarding-prev" type="button" class="sb-btn" style="display: none;" data-i18n="onboardingPrev">上一步</button>
+          <button id="sb-onboarding-next" type="button" class="sb-btn sb-btn-primary" data-i18n="onboardingNext">下一步</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+    </footer>
+    <script type="module" src="side-panel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>搜尋報告 · SocialBuddy 社群小幫手</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="reports.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <h1 class="sb-title" data-i18n="reportsTitle">搜尋報告</h1>
+      <button type="button" id="sb-theme-toggle" class="sb-theme-toggle" data-i18n-title="toggleTheme">主題</button>
+    </header>
+
+    <nav class="sb-toolbar" aria-label="動作">
+      <button id="sb-export-merged" type="button" class="sb-btn" data-i18n-title="btnExportMerged" data-i18n="btnExportMerged">匯出合併報告</button>
+    </nav>
+
+    <main>
+      <p id="sb-status" class="sb-status" role="status" aria-live="polite" data-i18n="loadingStatus">讀取中…</p>
+
+      <!-- 報告列表視圖 -->
+      <div id="sb-list-view" class="sb-list-view">
+        <div id="sb-reports" class="sb-reports" aria-label="搜尋報告清單">
+          <!-- 動態插入報告 -->
+        </div>
+      </div>
+
+      <!-- 報告詳細視圖 -->
+      <div id="sb-detail-view" class="sb-detail-view" hidden>
+        <button id="sb-detail-back" class="sb-btn" data-i18n="detailBack" title="返回列表">← 返回</button>
+
+        <div id="sb-detail-header" class="sb-detail-header">
+          <!-- 動態插入報告資訊 -->
+        </div>
+
+        <!-- 關鍵字命中統計圖表（CSS Bar Chart） -->
+        <section class="sb-detail-section">
+          <h2 data-i18n="keywordHitStats">關鍵字命中統計</h2>
+          <div id="sb-keyword-chart" class="sb-keyword-chart">
+            <!-- 動態插入柱狀圖 -->
+          </div>
+        </section>
+
+        <!-- 異常警示 -->
+        <section class="sb-detail-section">
+          <h2 data-i18n="anomalyAlerts">異常警示</h2>
+          <div id="sb-anomalies" class="sb-anomalies">
+            <!-- 動態插入 -->
+          </div>
+        </section>
+
+        <!-- 新增貼文 -->
+        <section class="sb-detail-section">
+          <h2 data-i18n="newPosts">新增貼文</h2>
+          <div id="sb-new-posts" class="sb-new-posts">
+            <!-- 動態插入 -->
+          </div>
+        </section>
+      </div>
+
+      <!-- 跨報告趨勢（簡單柱狀圖） -->
+      <section id="sb-trend-section" class="sb-detail-section" hidden>
+        <h2 data-i18n="trendAnalysis">跨報告關鍵字趨勢</h2>
+        <div id="sb-trend-chart" class="sb-trend-chart">
+          <!-- 動態插入柱狀圖 -->
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="reports.js"></script>
+      <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+    </footer>
+  </body>
+</html>

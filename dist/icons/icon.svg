@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bubbleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4DD4AC"/>
+      <stop offset="100%" stop-color="#2A9D8F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 對話泡泡 -->
+  <rect x="20" y="34" rx="18" ry="18" width="80" height="60" fill="url(#bubbleGrad)"/>
+  <!-- 泡泡尾巴 -->
+  <polygon points="36,94 26,112 54,92" fill="#2A9D8F"/>
+
+  <!-- 泡泡裡的文字行（代表貼文內容） -->
+  <rect x="35" y="50" rx="2.5" ry="2.5" width="50" height="5.5" fill="rgba(255,255,255,0.9)"/>
+  <rect x="35" y="61" rx="2.5" ry="2.5" width="40" height="5.5" fill="rgba(255,255,255,0.6)"/>
+  <rect x="35" y="72" rx="2.5" ry="2.5" width="46" height="5.5" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- 迴紋針（深炭灰，高亮度對比） -->
+  <g transform="translate(76, 10) rotate(32)">
+    <!-- 外圈 -->
+    <rect x="0" y="0" rx="11" ry="11" width="22" height="56"
+          fill="none" stroke="#2D3436" stroke-width="5" stroke-linejoin="round"/>
+    <!-- 內圈（回勾部分） -->
+    <rect x="5.5" y="14" rx="6" ry="6" width="11" height="28"
+          fill="none" stroke="#2D3436" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>

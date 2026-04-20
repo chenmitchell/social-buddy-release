@@ -1,0 +1,492 @@
+/* SocialBuddy Options — WCAG AAA baseline */
+
+/* theme.css is loaded via <link> in HTML — no @import needed */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sb-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 24px 0 12px;
+}
+
+.sb-note {
+  color: var(--sb-text-muted);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.sb-section {
+  padding: 16px;
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  background: var(--sb-bg-tertiary);
+  margin-bottom: 16px;
+}
+
+.sb-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sb-toggle input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--sb-accent);
+}
+
+.sb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.sb-field input[type="number"] {
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  max-width: 180px;
+}
+
+.sb-field input:focus,
+.sb-toggle input:focus,
+.sb-btn:focus {
+  outline: 3px solid var(--sb-focus);
+  outline-offset: 2px;
+}
+
+.sb-actions {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sb-btn {
+  min-height: 44px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sb-btn-primary {
+  background: var(--sb-accent);
+  color: var(--sb-accent-fg);
+  border-color: var(--sb-accent);
+}
+
+.sb-btn-primary:hover {
+  background: #1540a0;
+  border-color: #1540a0;
+}
+
+.sb-status {
+  margin: 0;
+  font-size: 14px;
+  color: var(--sb-text-muted);
+}
+
+/* ── 排程任務 UI ───────────────────────────────────── */
+
+.sb-sched-section h3 {
+  font-size: 16px;
+  margin: 16px 0 8px;
+}
+
+.sb-sched-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.sb-sched-card {
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: var(--sb-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sb-sched-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sb-sched-card-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.sb-sched-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.sb-sched-badge.active {
+  background: var(--sb-success-light);
+  color: var(--sb-success);
+}
+.sb-sched-badge.paused {
+  background: var(--sb-bg-tertiary);
+  color: var(--sb-text-muted);
+}
+.sb-sched-badge.failing {
+  background: var(--sb-danger-light);
+  color: var(--sb-danger);
+}
+
+.sb-sched-meta {
+  font-size: 13px;
+  color: var(--sb-text-muted);
+  line-height: 1.5;
+}
+
+.sb-sched-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.sb-sched-card-actions .sb-btn {
+  min-height: 36px;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.sb-sched-card-actions .sb-btn.danger {
+  border-color: var(--sb-danger);
+  color: var(--sb-danger);
+}
+
+.sb-sched-form {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px dashed var(--sb-accent);
+  border-radius: 8px;
+  background: var(--sb-accent-light);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sb-sched-form fieldset {
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0;
+}
+
+.sb-sched-form fieldset legend {
+  padding: 0 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sb-radio-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.sb-sched-form input[type="text"],
+.sb-sched-form input[type="time"],
+.sb-sched-form input[type="number"],
+.sb-sched-form select {
+  min-height: 40px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+}
+
+/* ── Verify View (v0.1.9) ──────────────────────────────────────────── */
+
+.sb-verify-drop {
+  border: 2px dashed var(--sb-border);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  background: var(--sb-bg);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.sb-verify-drop-hover {
+  border-color: var(--sb-accent);
+  background: var(--sb-accent-light);
+}
+
+.sb-verify-drop input[type="file"] {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.sb-verify-result {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  background: var(--sb-bg);
+  font-size: 14px;
+}
+
+.sb-verify-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.sb-verify-badge-ok {
+  background: var(--sb-success-light);
+  color: var(--sb-success);
+}
+
+.sb-verify-badge-tampered {
+  background: var(--sb-danger-light);
+  color: var(--sb-danger);
+}
+
+.sb-verify-badge-unsigned {
+  background: var(--sb-warning-light);
+  color: var(--sb-warning);
+}
+
+.sb-verify-badge-no-anchors,
+.sb-verify-badge-unknown-format {
+  background: var(--sb-bg-tertiary);
+  color: var(--sb-text-muted);
+}
+
+.sb-verify-row {
+  margin: 4px 0;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.sb-verify-note {
+  font-size: 13px;
+  color: var(--sb-text-muted);
+  margin: 8px 0 0;
+}
+
+.sb-verify-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.sb-verify-meta dt {
+  color: var(--sb-text-muted);
+  font-weight: 600;
+}
+
+.sb-verify-meta dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+/* === 下載路徑預覽 === */
+
+.sb-download-preview {
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--sb-bg-secondary);
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--sb-text-muted);
+  font-family: "Courier New", monospace;
+  word-break: break-all;
+}
+
+/* === 關鍵字分類 === */
+
+.sb-category-list,
+.sb-canned-list {
+  margin: 12px 0;
+}
+
+.sb-category-item,
+.sb-canned-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: var(--sb-bg-secondary);
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.sb-category-info,
+.sb-canned-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sb-category-name,
+.sb-canned-title {
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--sb-text);
+}
+
+.sb-category-keywords {
+  font-size: 12px;
+  color: var(--sb-text-muted);
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sb-canned-preview {
+  font-size: 12px;
+  color: var(--sb-text-muted);
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+  max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sb-category-actions,
+.sb-canned-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sb-category-actions button,
+.sb-canned-actions button {
+  padding: 6px 12px;
+  font-size: 13px;
+  min-height: 36px;
+}
+
+/* === 表單樣式 === */
+
+.sb-category-form,
+.sb-canned-form {
+  padding: 12px;
+  margin: 12px 0;
+  background: var(--sb-bg-secondary);
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+}
+
+.sb-category-form textarea,
+.sb-canned-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  resize: vertical;
+}
+
+.sb-category-form textarea:focus,
+.sb-canned-form textarea:focus {
+  outline: 3px solid var(--sb-focus);
+  outline-offset: 2px;
+}
+
+.sb-field input[type="text"],
+.sb-field input[type="email"],
+.sb-field select {
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  width: 100%;
+}
+
+.sb-field input:focus,
+.sb-field select:focus {
+  outline: 3px solid var(--sb-focus);
+  outline-offset: 2px;
+}
+
+.sb-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.sb-actions .sb-btn {
+  min-height: 40px;
+  padding: 10px 16px;
+  font-size: 15px;
+}
+
+.sb-status {
+  margin: 0;
+  color: var(--sb-accent);
+  font-size: 14px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>備份記錄 · SocialBuddy 社群小幫手</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="backup-records.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <h1 class="sb-title" data-i18n="backupRecordsTitle">備份記錄</h1>
+      <button type="button" id="sb-theme-toggle" class="sb-theme-toggle" data-i18n-title="toggleTheme">主題</button>
+    </header>
+
+    <section class="sb-stats-section">
+      <div class="sb-stat-card">
+        <div class="sb-stat-label" data-i18n="backupTotalCount">備份總數</div>
+        <div class="sb-stat-value" id="sb-stat-count">0</div>
+      </div>
+      <div class="sb-stat-card">
+        <div class="sb-stat-label" data-i18n="backupUsed">已使用</div>
+        <div class="sb-stat-value" id="sb-stat-used">0 B</div>
+      </div>
+      <div class="sb-stat-card">
+        <div class="sb-stat-label" data-i18n="backupLastBackup">最後備份</div>
+        <div class="sb-stat-value" id="sb-stat-last" data-i18n="backupNone">無</div>
+      </div>
+    </section>
+
+    <nav class="sb-toolbar" aria-label="搜尋和篩選">
+      <label class="sb-field">
+        <span class="sb-label-text" data-i18n="searchBackup">搜尋備份內容</span>
+        <input
+          id="sb-search"
+          type="search"
+          data-i18n-placeholder="searchBackup"
+          autocomplete="off"
+        />
+      </label>
+    </nav>
+
+    <main>
+      <p id="sb-status" class="sb-status" role="status" aria-live="polite" data-i18n="loadingStatus">讀取中…</p>
+      <div id="sb-backups" class="sb-backups" aria-label="備份記錄列表">
+        <!-- 動態插入備份 -->
+      </div>
+    </main>
+
+    <script type="module" src="backup-records.js"></script>
+      <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+    </footer>
+  </body>
+</html>
