@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>帳號分析 · SocialBuddy 社群小幫手</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="account-analysis.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <h1 class="sb-title" data-i18n="accountAnalysisTitle">帳號分析</h1>
+      <button type="button" id="sb-theme-toggle" class="sb-theme-toggle" data-i18n-title="toggleTheme">主題</button>
+    </header>
+
+    <nav class="sb-toolbar" aria-label="篩選和動作">
+      <div class="sb-filter-row">
+        <label class="sb-field">
+          <span class="sb-label-text" data-i18n="labelPlatform">平台</span>
+          <select id="sb-platform-filter">
+            <option value="" data-i18n="platformAll">全部</option>
+            <option value="threads">Threads</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+          </select>
+        </label>
+
+        <label class="sb-field sb-field-inline">
+          <span class="sb-label-text" data-i18n="labelSort">排序</span>
+          <select id="sb-sort-select">
+            <option value="totalCount">總計數</option>
+            <option value="activityScore" data-i18n="accountActivity">活躍度</option>
+            <option value="lastActiveAt" data-i18n="accountLastActive">最後活躍</option>
+          </select>
+        </label>
+
+        <button id="sb-export-csv" type="button" class="sb-btn" data-i18n-title="btnExportCsv" data-i18n="btnExportCsv">匯出 CSV</button>
+      </div>
+    </nav>
+
+    <main>
+      <p id="sb-status" class="sb-status" role="status" aria-live="polite" data-i18n="loadingStatus">讀取中…</p>
+
+      <!-- 帳號列表視圖 -->
+      <div id="sb-list-view" class="sb-list-view">
+        <table class="sb-account-table" aria-label="帳號清單">
+          <thead>
+            <tr>
+              <th data-i18n="accountName">帳號</th>
+              <th data-i18n="accountPlatform">平台</th>
+              <th data-i18n="accountFirstSeen">首次發現</th>
+              <th data-i18n="accountLastActive">最後活躍</th>
+              <th data-i18n="accountPostCount">貼文數</th>
+              <th data-i18n="accountReplyCount">回覆數</th>
+              <th data-i18n="accountTotal">總計</th>
+              <th data-i18n="accountActivity">活躍度</th>
+              <th data-i18n="accountActions">動作</th>
+            </tr>
+          </thead>
+          <tbody id="sb-account-list">
+            <!-- 動態插入帳號 -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 帳號詳細視圖 -->
+      <div id="sb-detail-view" class="sb-detail-view" hidden>
+        <button id="sb-detail-back" class="sb-btn" data-i18n="detailBack" title="返回列表">← 返回</button>
+
+        <div id="sb-detail-header" class="sb-detail-header">
+          <!-- 動態插入帳號資訊 -->
+        </div>
+
+        <section class="sb-detail-section">
+          <h2 data-i18n="stickinessMatrix">黏著度矩陣</h2>
+          <table class="sb-stickiness-table" id="sb-stickiness-table">
+            <thead>
+              <tr>
+                <th data-i18n="followingAccount">追蹤帳號</th>
+                <th data-i18n="replyCount">回覆次數</th>
+                <th data-i18n="cooccurrence">共同出現</th>
+                <th data-i18n="stickinessScore">黏著度分數</th>
+              </tr>
+            </thead>
+            <tbody id="sb-stickiness-list">
+              <!-- 動態插入 -->
+            </tbody>
+          </table>
+        </section>
+
+        <section class="sb-detail-section">
+          <h2 data-i18n="interestingArticles">興趣文章</h2>
+          <div id="sb-interest-list" class="sb-interest-list">
+            <!-- 動態插入 -->
+          </div>
+        </section>
+
+        <section class="sb-detail-section">
+          <h2 data-i18n="contactInfo">聯絡資訊</h2>
+          <div id="sb-contact-info" class="sb-contact-info">
+            <!-- 動態插入 -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="account-analysis.js"></script>
+      <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+    </footer>
+  </body>
+</html>

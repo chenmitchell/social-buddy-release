@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SocialBuddy · 設定</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="sb-wrap">
+      <h1 data-i18n="optionsTitle">SocialBuddy · 設定</h1>
+      <p class="sb-note" data-i18n="optionsIntro">這裡調整擷取行為。資料永遠只存在你的電腦，不會上雲。</p>
+
+      <section class="sb-section">
+        <h2 data-i18n="sectionCapture">擷取</h2>
+
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-autoCapture" />
+          <span data-i18n="toggleAutoCapture">自動擷取瀏覽中的貼文</span>
+        </label>
+
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-showMediaPreview" />
+          <span data-i18n="toggleShowMediaPreview">在側邊欄顯示圖片預覽（會向平台 CDN 發請求）</span>
+        </label>
+      </section>
+
+      <section class="sb-section">
+        <h2 data-i18n="sectionPlatforms">平台</h2>
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-plat-threads" />
+          <span>Threads</span>
+        </label>
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-plat-instagram" />
+          <span>Instagram</span>
+        </label>
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-plat-facebook" />
+          <span>Facebook</span>
+        </label>
+      </section>
+
+      <section class="sb-section">
+        <h2 data-i18n="sectionRetention">資料保留</h2>
+        <label class="sb-field">
+          <span data-i18n="retentionLabel">自動刪除超過天數（0 代表永久保留）</span>
+          <input type="number" id="sb-retentionDays" min="0" max="3650" step="1" />
+        </label>
+      </section>
+
+      <section class="sb-section">
+        <h2 data-i18n="">檔案真偽標記</h2>
+        <p class="sb-note">
+          匯出的檔案會標上你的名字，讓別人一眼看出這份檔從哪裡來。可選的標籤會一起顯示。
+        </p>
+        <label class="sb-field">
+          <span data-i18n="">自訂標籤（可留空，例如「工作用」、「研究專案 X」）</span>
+          <input
+            type="text"
+            id="sb-watermarkCustomLabel"
+            maxlength="80"
+            placeholder="（可空）"
+          />
+        </label>
+        <label class="sb-field">
+          <span data-i18n="">備用 email（若瀏覽器沒有登入 Google 帳號時使用）</span>
+          <input
+            type="email"
+            id="sb-watermarkFallbackEmail"
+            maxlength="120"
+            placeholder="（可空）"
+          />
+        </label>
+      </section>
+
+      <div class="sb-actions">
+        <button id="sb-save" type="button" class="sb-btn sb-btn-primary" data-i18n="btnSave">儲存</button>
+        <p id="sb-status" class="sb-status" role="status" aria-live="polite"></p>
+      </div>
+
+
+      <section class="sb-section sb-sched-section">
+        <h2 data-i18n="">排程任務</h2>
+        <p class="sb-note">
+          讓 Chrome 在你不在電腦前時，自動跑搜尋並把結果匯成檔案。
+          注意：Chrome 需保持開啟（可最小化）；間隔模式最少 30 分鐘是 Chrome 的硬限制。
+        </p>
+
+        <div id="sb-sched-list" class="sb-sched-list" aria-live="polite">
+          <p class="sb-note" id="sb-sched-empty" data-i18n="">目前沒有排程任務。按下方「新增」開始。</p>
+        </div>
+
+        <div class="sb-actions">
+          <button id="sb-sched-new" type="button" class="sb-btn sb-btn-primary" data-i18n="">＋ 新增排程</button>
+          <button id="sb-sched-refresh" type="button" class="sb-btn" data-i18n="btnRefresh">重新整理</button>
+        </div>
+
+        <form id="sb-sched-form" class="sb-sched-form" hidden>
+          <h3 id="sb-sched-form-title">新增排程</h3>
+          <input type="hidden" id="sb-sched-id" />
+
+          <label class="sb-field">
+            <span>名稱（給自己看的標籤）</span>
+            <input type="text" id="sb-sched-name" maxlength="60" required placeholder="例：每天早上抓「補助」相關" />
+          </label>
+
+          <label class="sb-field">
+            <span>任務種類</span>
+            <select id="sb-sched-kind">
+              <option value="export">匯出（從現有貼文挑符合條件的存檔）</option>
+              <option value="search">搜尋（只跑 search、不存檔）</option>
+              <option value="both">兩者都做</option>
+            </select>
+          </label>
+
+          <fieldset class="sb-field">
+            <legend>觸發頻率</legend>
+            <div class="sb-radio-row">
+              <label><input type="radio" name="sb-sched-type" value="hourly" /> 每小時整點</label>
+              <label><input type="radio" name="sb-sched-type" value="daily" checked /> 每天</label>
+              <label><input type="radio" name="sb-sched-type" value="weekly" /> 每週</label>
+              <label><input type="radio" name="sb-sched-type" value="interval" /> 每 N 分鐘</label>
+            </div>
+          </fieldset>
+
+          <label class="sb-field" id="sb-sched-time-row">
+            <span>觸發時刻（每天 / 每週適用）</span>
+            <input type="time" id="sb-sched-timeOfDay" value="09:00" />
+          </label>
+
+          <label class="sb-field" id="sb-sched-dow-row" hidden>
+            <span>星期幾</span>
+            <select id="sb-sched-dayOfWeek">
+              <option value="0">日</option>
+              <option value="1" selected>一</option>
+              <option value="2">二</option>
+              <option value="3">三</option>
+              <option value="4">四</option>
+              <option value="5">五</option>
+              <option value="6">六</option>
+            </select>
+          </label>
+
+          <label class="sb-field" id="sb-sched-interval-row" hidden>
+            <span>間隔（分鐘，最少 30）</span>
+            <input type="number" id="sb-sched-intervalMinutes" min="30" max="10080" value="60" />
+          </label>
+
+          <fieldset class="sb-field" id="sb-sched-export-row">
+            <legend>匯出設定</legend>
+            <label class="sb-toggle"><input type="checkbox" id="sb-sched-fmt-json" checked /> <span>JSON</span></label>
+            <label class="sb-toggle"><input type="checkbox" id="sb-sched-fmt-csv" /> <span>CSV</span></label>
+            <label class="sb-toggle"><input type="checkbox" id="sb-sched-fmt-html" /> <span>HTML</span></label>
+            <label class="sb-toggle"><input type="checkbox" id="sb-sched-fmt-xlsx" /> <span>XLSX</span></label>
+            <label class="sb-toggle"><input type="checkbox" id="sb-sched-fmt-png" /> <span>PNG</span></label>
+
+            <label class="sb-field">
+              <span>版式</span>
+              <select id="sb-sched-layout">
+                <option value="paired" selected>paired（回覆配原文）</option>
+                <option value="flat">flat（單則列表）</option>
+                <option value="threaded">threaded（整串）</option>
+              </select>
+            </label>
+
+            <label class="sb-field">
+              <span>篩選關鍵字（用逗號分隔；空白 = 全部）</span>
+              <input type="text" id="sb-sched-filterKeywords" placeholder="例：補助, 詐騙" />
+            </label>
+
+            <label class="sb-field">
+              <span>平台篩選</span>
+              <select id="sb-sched-platform">
+                <option value="">全部</option>
+                <option value="threads">Threads</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset class="sb-field">
+            <legend>通知</legend>
+            <label class="sb-toggle">
+              <input type="checkbox" id="sb-sched-notify-onNewMatch" checked />
+              <span>有新命中時推 Chrome 通知</span>
+            </label>
+            <label class="sb-field">
+              <span>至少幾則才推（避免每次都跳）</span>
+              <input type="number" id="sb-sched-notify-min" min="1" max="100" value="1" />
+            </label>
+            <label class="sb-toggle">
+              <input type="checkbox" id="sb-sched-notify-onFailing" checked />
+              <span>排程連續失敗時推通知</span>
+            </label>
+          </fieldset>
+
+          <div class="sb-actions">
+            <button type="submit" class="sb-btn sb-btn-primary">儲存排程</button>
+            <button type="button" id="sb-sched-cancel" class="sb-btn">取消</button>
+            <p id="sb-sched-form-status" class="sb-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <!-- 主題設定 -->
+      <section class="sb-section">
+        <h2>主題</h2>
+        <label class="sb-field">
+          <span>配色方案</span>
+          <select id="sb-theme-select">
+            <option value="system">跟隨系統設定</option>
+            <option value="light">淺色</option>
+            <option value="dark">深色</option>
+          </select>
+        </label>
+      </section>
+
+      <!-- 下載路徑 -->
+      <section class="sb-section">
+        <h2>下載路徑</h2>
+        <p class="sb-note">設定匯出檔案的儲存位置（相對於系統的「下載」資料夾）。</p>
+        <label class="sb-field">
+          <span>子路徑（留空 = 直接存到下載資料夾）</span>
+          <input
+            type="text"
+            id="sb-downloadSubPath"
+            maxlength="200"
+            placeholder="例：SocialBuddy/2026-04-17"
+          />
+        </label>
+        <label class="sb-toggle">
+          <input type="checkbox" id="sb-downloadByDate" />
+          <span>自動依日期建子資料夾（YYYY-MM-DD）</span>
+        </label>
+        <div id="sb-download-preview" class="sb-download-preview"></div>
+      </section>
+
+      <!-- 關鍵字分類 -->
+      <section class="sb-section">
+        <h2>關鍵字分類</h2>
+        <p class="sb-note">
+          將關鍵字分組，方便側邊欄快速切換。可匯出分享給同事，或從其他人的分類檔匯入。
+        </p>
+
+        <div class="sb-actions">
+          <button id="sb-category-new" type="button" class="sb-btn">＋ 新增分類</button>
+          <button id="sb-category-import-file" type="button" class="sb-btn">匯入 JSON</button>
+          <button id="sb-category-export" type="button" class="sb-btn">匯出 JSON</button>
+          <input type="file" id="sb-category-file-input" accept=".json" style="display: none;" />
+        </div>
+
+        <div id="sb-category-list" class="sb-category-list" aria-live="polite">
+          <p class="sb-note">目前沒有分類。</p>
+        </div>
+
+        <form id="sb-category-form" class="sb-category-form" hidden>
+          <input type="hidden" id="sb-category-id" />
+          <label class="sb-field">
+            <span>分類名稱</span>
+            <input type="text" id="sb-category-name" maxlength="50" required placeholder="例：時事、詐騙、品牌" />
+          </label>
+          <label class="sb-field">
+            <span>關鍵字（用逗號分隔）</span>
+            <textarea id="sb-category-keywords" rows="3" required placeholder="例：補助, 詐騙, 假貨&#10;每行一個或用逗號分隔"></textarea>
+          </label>
+          <label class="sb-toggle">
+            <input type="checkbox" id="sb-category-enabled" checked />
+            <span>啟用此分類</span>
+          </label>
+          <div class="sb-actions">
+            <button type="submit" class="sb-btn sb-btn-primary">儲存分類</button>
+            <button type="button" id="sb-category-cancel" class="sb-btn">取消</button>
+            <p id="sb-category-form-status" class="sb-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <!-- 快速回覆 -->
+      <section class="sb-section">
+        <h2>快速回覆</h2>
+        <p class="sb-note">
+          常用的回覆樣板。側邊欄會顯示下拉選單，選一個點「填入」就能在留言框自動填文字。
+        </p>
+
+        <div class="sb-actions">
+          <button id="sb-canned-new" type="button" class="sb-btn">＋ 新增</button>
+          <button id="sb-canned-import-file" type="button" class="sb-btn">匯入 JSON</button>
+          <button id="sb-canned-export" type="button" class="sb-btn">匯出 JSON</button>
+          <button id="sb-canned-reset" type="button" class="sb-btn">還原預設</button>
+          <input type="file" id="sb-canned-file-input" accept=".json" style="display: none;" />
+        </div>
+
+        <div id="sb-canned-list" class="sb-canned-list" aria-live="polite">
+          <p class="sb-note">無。</p>
+        </div>
+
+        <form id="sb-canned-form" class="sb-canned-form" hidden>
+          <input type="hidden" id="sb-canned-id" />
+          <label class="sb-field">
+            <span>標題（簡短描述）</span>
+            <input type="text" id="sb-canned-title" maxlength="50" required placeholder="例：感謝留言" />
+          </label>
+          <label class="sb-field">
+            <span>回覆內容</span>
+            <textarea id="sb-canned-body" rows="4" required placeholder="完整的回覆文字..."></textarea>
+          </label>
+          <div class="sb-actions">
+            <button type="submit" class="sb-btn sb-btn-primary">儲存</button>
+            <button type="button" id="sb-canned-cancel" class="sb-btn">取消</button>
+            <button type="button" id="sb-canned-delete" class="sb-btn sb-btn-danger" style="display: none;">刪除</button>
+            <p id="sb-canned-form-status" class="sb-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+      <small id="sb-version" class="sb-version-label" title="版本資訊">v1.0.5</small>
+    </footer>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>搜尋結果 · SocialBuddy 社群小幫手</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="search-results.css" />
+  </head>
+  <body>
+    <header class="sb-header">
+      <h1 class="sb-title" data-i18n="searchResultsTitle">搜尋結果</h1>
+      <button type="button" id="sb-theme-toggle" class="sb-theme-toggle" data-i18n-title="toggleTheme">主題</button>
+    </header>
+
+    <nav class="sb-toolbar" aria-label="篩選和動作">
+      <div class="sb-filter-row">
+        <label class="sb-field">
+          <span class="sb-label-text" data-i18n="labelPlatform">平台</span>
+          <select id="sb-platform-filter">
+            <option value="" data-i18n="platformAll">全部</option>
+            <option value="threads">Threads</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+          </select>
+        </label>
+
+        <label class="sb-field">
+          <span class="sb-label-text" data-i18n="labelKeywordFilter">關鍵字</span>
+          <input
+            id="sb-keyword-filter"
+            type="text"
+            data-i18n-placeholder="filterKeyword"
+            autocomplete="off"
+          />
+        </label>
+
+        <label class="sb-field">
+          <span class="sb-label-text" data-i18n="labelTimeRange">時間範圍</span>
+          <select id="sb-time-filter">
+            <option value="" data-i18n="platformAll">全部</option>
+            <option value="7d" data-i18n="last7Days">最近 7 天</option>
+            <option value="30d" data-i18n="last30Days">最近 30 天</option>
+            <option value="90d" data-i18n="last90Days">最近 90 天</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="sb-action-row">
+        <label class="sb-field sb-field-inline">
+          <span class="sb-label-text" data-i18n="labelSort">排序</span>
+          <select id="sb-sort-select">
+            <option value="recent" data-i18n="sortRecent">最新</option>
+            <option value="popular" data-i18n="sortPopular">熱門</option>
+          </select>
+        </label>
+
+        <button id="sb-export-csv" type="button" class="sb-btn" data-i18n-title="btnExportCsv" data-i18n="btnExportCsv">匯出 CSV</button>
+        <button id="sb-export-json" type="button" class="sb-btn" data-i18n-title="btnExportJson" data-i18n="btnExportJson">匯出 JSON</button>
+        <button id="sb-batch-archive" type="button" class="sb-btn" data-i18n-title="btnBatchArchive" data-i18n="btnBatchArchive">批次封存</button>
+      </div>
+    </nav>
+
+    <main>
+      <p id="sb-status" class="sb-status" role="status" aria-live="polite" data-i18n="loadingStatus">讀取中…</p>
+      <div id="sb-results" class="sb-results" aria-label="搜尋結果列表">
+        <!-- 動態插入結果 -->
+      </div>
+    </main>
+
+    <script type="module" src="search-results.js"></script>
+      <footer class="sb-trademark">
+      <small>© Mitchell Chen 米球 — SocialBuddy 社群小幫手</small>
+    </footer>
+  </body>
+</html>

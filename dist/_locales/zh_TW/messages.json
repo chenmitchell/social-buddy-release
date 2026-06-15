@@ -1,0 +1,283 @@
+{
+  "extName": {
+    "message": "SocialBuddy · 社群小幫手",
+    "description": "Extension display name"
+  },
+  "extShortName": {
+    "message": "SocialBuddy",
+    "description": "Short name shown under the toolbar icon"
+  },
+  "extDescription": {
+    "message": "在你瀏覽 Threads / Instagram / Facebook 時，把貼文備份到本機。資料只存在你自己的電腦，不上雲。",
+    "description": "Chrome Web Store description"
+  },
+  "actionTitle": {
+    "message": "SocialBuddy · 社群小幫手",
+    "description": "Tooltip on toolbar icon"
+  },
+  "sidePanelTitle": {
+    "message": "社群小幫手",
+    "description": "Side panel heading"
+  },
+  "sidePanelSubtitle": {
+    "message": "資料只存在你的電腦",
+    "description": "Side panel subtitle / privacy reminder"
+  },
+  "labelKeyword": { "message": "關鍵字" },
+  "searchPlaceholder": { "message": "搜尋貼文內容或作者" },
+  "labelPlatform": { "message": "平台" },
+  "platformAll": { "message": "全部" },
+  "labelExportFormat": { "message": "匯出格式" },
+  "btnRefresh": { "message": "重新整理" },
+  "btnExport": { "message": "匯出" },
+  "btnClear": { "message": "清空" },
+  "statusLoading": { "message": "讀取中…" },
+  "statusEmpty": { "message": "目前沒有任何貼文。打開 Threads/IG/FB 就會自動抓取。" },
+  "statusEmptyFiltered": { "message": "符合條件的貼文：0" },
+  "statusShowing": {
+    "message": "顯示 $SHOWN$ / $TOTAL$ 則",
+    "placeholders": {
+      "shown": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  },
+  "statusExportDone": {
+    "message": "已匯出 $FORMAT$（見瀏覽器下載列）。",
+    "placeholders": {
+      "format": { "content": "$1" }
+    }
+  },
+  "statusCleared": { "message": "已清空所有貼文。" },
+  "confirmClearAll": { "message": "確定要清空全部已擷取的貼文？此動作無法復原。" },
+  "linkOriginal": { "message": "原文" },
+  "optionsTitle": { "message": "SocialBuddy · 設定" },
+  "optionsIntro": { "message": "這裡調整擷取行為。資料永遠只存在你的電腦，不會上雲。" },
+  "sectionCapture": { "message": "擷取" },
+  "sectionPlatforms": { "message": "平台" },
+  "sectionRetention": { "message": "資料保留" },
+  "toggleAutoCapture": { "message": "自動擷取瀏覽中的貼文" },
+  "toggleShowMediaPreview": { "message": "在側邊欄顯示圖片預覽（會向平台 CDN 發請求）" },
+  "retentionLabel": { "message": "自動刪除超過天數（0 代表永久保留）" },
+  "btnSave": { "message": "儲存" },
+  "savedAt": {
+    "message": "已儲存（$TIME$）",
+    "placeholders": { "time": { "content": "$1" } }
+  },
+  "saveMismatch": { "message": "⚠ 儲存後讀回不一致，請重試" },
+  "homePageTitle": { "message": "社群小幫手" },
+  "homePageSubtitle": { "message": "資料只存在你的電腦" },
+  "toggleTheme": { "message": "切換主題" },
+  "scheduleIndicator": { "message": "排程" },
+  "navSearchResults": { "message": "搜尋結果" },
+  "navAccountAnalysis": { "message": "帳號分析" },
+  "navBackupRecords": { "message": "備份紀錄" },
+  "navReports": { "message": "報告" },
+  "threadsKeywordSearch": { "message": "Threads 關鍵字搜尋" },
+  "labelCategory": { "message": "分類" },
+  "customKeyword": { "message": "-- 自訂關鍵字 --" },
+  "btnImportCategory": { "message": "📥 匯入分類" },
+  "btnExportCategory": { "message": "📤 匯出分類" },
+  "labelSort": { "message": "排序" },
+  "sortPopular": { "message": "熱門（最相關）" },
+  "sortRecent": { "message": "最新" },
+  "labelDepth": { "message": "深度" },
+  "depthShallow": { "message": "淺（每個約 30 秒，1 輪）" },
+  "depthMedium": { "message": "中（每個約 60 秒，2 輪）" },
+  "depthDeep": { "message": "深（每個約 120 秒，3 輪）" },
+  "depthContinuous": { "message": "持續（無限輪，手動停止）" },
+  "btnStartSearch": { "message": "開始搜尋 Threads" },
+  "btnStopSearch": { "message": "停止搜尋並匯出" },
+  "replyModeTitle": { "message": "回覆貼文要抓什麼" },
+  "replySelfOnly": { "message": "只抓這則留言" },
+  "replySelfOnlyHint": { "message": "不帶上下文，最乾淨" },
+  "replyWithParent": { "message": "留言 + 被回覆的原文" },
+  "replyWithParentHint": { "message": "看得到前因後果" },
+  "replyWithThread": { "message": "原文 + 整串留言" },
+  "replyWithThreadHint": { "message": "完整討論串（可見範圍內）" },
+  "labelFilter": { "message": "篩選貼文" },
+  "allPlatforms": { "message": "全部" },
+  "autoScreenshot": { "message": "自動截圖" },
+  "capturedPosts": { "message": "已擷取貼文" },
+  "noPostsLoading": { "message": "讀取中…" },
+  "noPostsEmpty": { "message": "目前沒有任何貼文。打開 Threads/IG/FB 就會自動抓取。" },
+  "noPostsFiltered": { "message": "符合條件的貼文：0" },
+  "viewOriginal": { "message": "原文" },
+  "replyingTo": { "message": "正在回覆：" },
+  "couldNotLoad": { "message": "（無法抓到原文內容）" },
+  "threadReplies": { "message": "同串留言" },
+  "linkOriginal": { "message": "· 看原文" },
+  "editHistory": { "message": "✏️ 已編輯 ×" },
+  "viewEditHistory": { "message": "查看編輯歷史" },
+  "historyTitle": { "message": "編輯歷史" },
+  "historyMeta": {
+    "message": "@$1 · $2 · 共 $3 個版本",
+    "placeholders": {
+      "author": { "content": "$1" },
+      "platform": { "content": "$2" },
+      "count": { "content": "$3" }
+    }
+  },
+  "oldVersion": { "message": "舊版" },
+  "newVersion": { "message": "新版" },
+  "diffStats": {
+    "message": "+$1  −$2  (同 $3 字)",
+    "placeholders": {
+      "added": { "content": "$1" },
+      "removed": { "content": "$2" },
+      "equal": { "content": "$3" }
+    }
+  },
+  "quickReply": { "message": "快速回覆" },
+  "cannedPersonaTab1": { "message": "穩重" },
+  "cannedPersonaTab2": { "message": "活潑" },
+  "cannedPersonaTab3": { "message": "俏皮" },
+  "selectReply": { "message": "-- 選擇回覆 --" },
+  "copyToClipboard": { "message": "📋" },
+  "fillReplyBox": { "message": "📝" },
+  "cannedHint": { "message": "建議回覆，請調整後再送出" },
+  "btnImportTemplates": { "message": "📥 匯入" },
+  "btnExportTemplates": { "message": "📤 匯出" },
+  "btnResetDefaults": { "message": "↩ 還原預設" },
+  "copied": { "message": "已複製！請調整後再送出" },
+  "filled": { "message": "已填入！請調整後再送出" },
+  "copyFallback": { "message": "無法填入，已複製到剪貼簿" },
+  "export": { "message": "匯出" },
+  "labelFormat": { "message": "格式（可多選）" },
+  "layoutFlat": { "message": "單則列表" },
+  "layoutPaired": { "message": "配原文" },
+  "layoutThreaded": { "message": "整串" },
+  "autoExport": { "message": "自動匯出" },
+  "autoExportInterval": { "message": "自動匯出間隔" },
+  "every3Min": { "message": "每 3 分鐘" },
+  "every5Min": { "message": "每 5 分鐘" },
+  "every10Min": { "message": "每 10 分鐘" },
+  "btnExport": { "message": "立即匯出" },
+  "btnClear": { "message": "清空" },
+  "storageWarning": { "message": "儲存空間警告" },
+  "storageNear": { "message": "儲存空間使用率" },
+  "storageDanger": { "message": "儲存空間即將滿" },
+  "exportAndClear": { "message": "匯出後清除" },
+  "searchStatus": {
+    "message": "準備搜尋 $1 組關鍵字（$2）…",
+    "placeholders": {
+      "count": { "content": "$1" },
+      "depth": { "content": "$2" }
+    }
+  },
+  "searchFailed": { "message": "搜尋失敗" },
+  "searchStopping": { "message": "正在停止搜尋…" },
+  "searchContinue": { "message": "繼續搜尋中…" },
+  "searchProgress": {
+    "message": "第 $1 輪 · 搜尋中（$2/$3）：$4",
+    "placeholders": {
+      "round": { "content": "$1" },
+      "current": { "content": "$2" },
+      "total": { "content": "$3" },
+      "keyword": { "content": "$4" }
+    }
+  },
+  "searchDone": {
+    "message": "搜尋完成！共搜了 $1 組關鍵字。",
+    "placeholders": {
+      "count": { "content": "$1" }
+    }
+  },
+  "searchStopped": { "message": "已停止" },
+  "searchRequired": { "message": "請先新增至少一個關鍵字。" },
+  "exportSuccess": {
+    "message": "已匯出 $1（存到 Downloads/socialbuddy/$2/<格式>/）",
+    "placeholders": {
+      "format": { "content": "$1" },
+      "folder": { "content": "$2" }
+    }
+  },
+  "importSuccess": {
+    "message": "匯入成功（$1 個分類）",
+    "placeholders": {
+      "count": { "content": "$1" }
+    }
+  },
+  "importFailed": { "message": "匯入失敗" },
+  "exportFailed": { "message": "匯出失敗" },
+  "clearFailed": { "message": "清空失敗" },
+  "resetDefaults": { "message": "已還原預設範本" },
+  "resetFailed": { "message": "還原失敗" },
+  "importFormatError": { "message": "格式錯誤：找不到有效的分類資料" },
+  "csvFormatError": { "message": "CSV 格式錯誤：需要至少 4 欄（分類,語氣,標題,內容）" },
+  "noDataToExport": { "message": "目前沒有關鍵字分類可匯出" },
+  "noTemplates": { "message": "目前沒有範本可匯出" },
+  "noCannedMessages": { "message": "（尚無範本）" },
+  "confirmClear": { "message": "確定要清空全部已擷取的貼文？此動作無法復原。" },
+  "confirmReset": { "message": "確定要還原預設快速回覆？這會刪除所有自訂的範本。" },
+  "removeKeyword": {
+    "message": "移除「$1」",
+    "placeholders": {
+      "keyword": { "content": "$1" }
+    }
+  },
+  "onboardingStep": {
+    "message": "步驟 $1 / 5",
+    "placeholders": {
+      "step": { "content": "$1" }
+    }
+  },
+  "onboardingDownloadPath": { "message": "下載路徑" },
+  "onboardingDownloadPathDesc": { "message": "匯出的檔案會儲存到你的「下載」資料夾。你可以在設定裡設定子資料夾位置。" },
+  "onboardingCategories": { "message": "關鍵字分類" },
+  "onboardingCategoriesDesc": { "message": "在設定頁可以建立關鍵字分類，方便在側邊欄快速切換。" },
+  "onboardingWatermark": { "message": "檔案浮水印" },
+  "onboardingWatermarkDesc": { "message": "匯出的檔案會標上你的名字。在設定裡可以加自訂標籤（例如「工作用」）。" },
+  "onboardingSchedule": { "message": "定時搜尋" },
+  "onboardingScheduleDesc": { "message": "在設定的「排程任務」區可以設定讓 Chrome 在背景定時搜尋和匯出。" },
+  "onboardingStart": { "message": "開始使用" },
+  "onboardingStartDesc": { "message": "現在就試試吧！在上方輸入關鍵字，按「開始搜尋 Threads」。" },
+  "onboardingSkip": { "message": "跳過" },
+  "onboardingPrev": { "message": "上一步" },
+  "onboardingNext": { "message": "下一步" },
+  "onboardingDone": { "message": "完成" },
+  "onboardingTitle": { "message": "SocialBuddy · 設定" },
+  "searchResultsTitle": { "message": "搜尋結果" },
+  "backupRecordsTitle": { "message": "備份記錄" },
+  "accountAnalysisTitle": { "message": "帳號分析" },
+  "reportsTitle": { "message": "搜尋報告" },
+  "labelKeywordFilter": { "message": "關鍵字" },
+  "filterKeyword": { "message": "篩選關鍵字" },
+  "labelTimeRange": { "message": "時間範圍" },
+  "last7Days": { "message": "最近 7 天" },
+  "last30Days": { "message": "最近 30 天" },
+  "last90Days": { "message": "最近 90 天" },
+  "btnExportCsv": { "message": "匯出 CSV" },
+  "btnExportJson": { "message": "匯出 JSON" },
+  "btnBatchArchive": { "message": "批次封存" },
+  "btnExportMerged": { "message": "匯出合併報告" },
+  "loadingStatus": { "message": "讀取中…" },
+  "backupTotalCount": { "message": "備份總數" },
+  "backupUsed": { "message": "已使用" },
+  "backupLastBackup": { "message": "最後備份" },
+  "backupNone": { "message": "無" },
+  "searchBackup": { "message": "搜尋備份內容" },
+  "backupsList": { "message": "備份記錄列表" },
+  "accountsTable": { "message": "帳號清單" },
+  "accountName": { "message": "帳號" },
+  "accountPlatform": { "message": "平台" },
+  "accountFirstSeen": { "message": "首次發現" },
+  "accountLastActive": { "message": "最後活躍" },
+  "accountPostCount": { "message": "貼文數" },
+  "accountReplyCount": { "message": "回覆數" },
+  "accountTotal": { "message": "總計" },
+  "accountActivity": { "message": "活躍度" },
+  "accountActions": { "message": "動作" },
+  "detailBack": { "message": "← 返回" },
+  "stickinessMatrix": { "message": "黏著度矩陣" },
+  "followingAccount": { "message": "追蹤帳號" },
+  "replyCount": { "message": "回覆次數" },
+  "cooccurrence": { "message": "共同出現" },
+  "stickinessScore": { "message": "黏著度分數" },
+  "interestingArticles": { "message": "興趣文章" },
+  "contactInfo": { "message": "聯絡資訊" },
+  "keywordHitStats": { "message": "關鍵字命中統計" },
+  "anomalyAlerts": { "message": "異常警示" },
+  "newPosts": { "message": "新增貼文" },
+  "trendAnalysis": { "message": "跨報告關鍵字趨勢" },
+  "reportsList": { "message": "搜尋報告清單" }
+}

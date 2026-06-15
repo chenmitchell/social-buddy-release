@@ -1,0 +1,179 @@
+SocialBuddy Proprietary License
+Version 1.0 — 2026
+
+Copyright (c) 2026 Mitchell Chen 米球 (陳彥輔). All Rights Reserved.
+
+TRADEMARK NOTICE:
+"米球" is a registered trademark of Mitchell Chen (陳彥輔). All rights
+reserved. "SocialBuddy", "社群小幫手", and the "M" logo are unregistered
+marks used by the Author and are protected under applicable trade name and
+unfair competition laws.
+
+"SocialBuddy" refers to the SocialBuddy Chrome Extension, including its
+source code, compiled artifacts (including but not limited to .zip, .crx,
+.js, .html, .css, and image files), documentation, installation guides,
+and any associated materials distributed under the name "SocialBuddy" or
+"社群小幫手" (hereinafter collectively referred to as "the Software").
+
+The Software is proprietary and confidential to Mitchell Chen (hereinafter
+"the Author"). No part of the Software may be used except in accordance
+with the terms of this License.
+
+
+1. GRANT OF LIMITED LICENSE
+
+Subject to your full and continued compliance with this License, the Author
+grants you a personal, non-exclusive, non-transferable, non-sublicensable,
+revocable license to:
+
+  (a) Download unmodified copies of the Software from the Author's official
+      distribution channels (including but not limited to the GitHub
+      repository chenmitchell/social-buddy-release and, once published,
+      the Chrome Web Store listing authored by the Author).
+
+  (b) Install and run the Software, without modification, as a Chrome
+      Extension in browsers on devices you personally own or control,
+      solely for your own personal, non-commercial use.
+
+  (c) Read the accompanying documentation solely for the purpose of
+      installing and operating the Software.
+
+
+2. RESTRICTIONS — YOU MAY NOT
+
+  (a) Modify, adapt, translate, port, or create derivative works based on
+      the Software or any part of it.
+
+  (b) Copy, reproduce, redistribute, publish, mirror, re-upload, sell,
+      rent, lease, sublicense, lend, or otherwise transfer the Software
+      or any part of it to any third party, whether for consideration or
+      not.
+
+  (c) Reverse engineer, decompile, disassemble, decrypt, or otherwise
+      attempt to derive the source code, underlying algorithms, or
+      internal structure of the Software, except and only to the extent
+      that such activity is expressly permitted by applicable law
+      notwithstanding this restriction.
+
+  (d) Remove, alter, obscure, or circumvent any copyright notice,
+      trademark, license notice, attribution, or other proprietary
+      marking contained in or on the Software.
+
+  (e) Use the Software in any manner that violates applicable law, that
+      infringes the rights of any third party, or that could damage,
+      disable, overburden, or impair the Software, the Author, or any
+      services or systems connected to the Software.
+
+  (f) Use the name "SocialBuddy", "社群小幫手", any logo, or any other
+      trademark of the Author in any derivative, competing, or misleading
+      product or service, or in any manner that suggests endorsement,
+      affiliation, or sponsorship by the Author without prior written
+      permission.
+
+  (g) Use the Software, in whole or in part, to train, fine-tune, or
+      otherwise develop any machine learning model, artificial
+      intelligence system, or automated code-generation system.
+
+
+3. OWNERSHIP
+
+All right, title, and interest in and to the Software, including all
+intellectual property rights, are and shall remain the exclusive property
+of the Author. This License does not grant you any ownership interest in
+the Software. No rights are granted by implication, estoppel, or otherwise,
+other than those expressly granted in Section 1.
+
+
+4. FEEDBACK
+
+If you voluntarily submit any suggestions, ideas, bug reports, or other
+feedback regarding the Software to the Author, you grant the Author a
+perpetual, irrevocable, worldwide, royalty-free, non-exclusive license
+to use and incorporate such feedback into the Software or any related
+products without restriction and without compensation to you.
+
+
+5. TERMINATION
+
+This License is effective until terminated. This License will terminate
+automatically and without notice if you breach any of its terms. Upon
+termination, you must immediately cease all use of the Software and
+destroy all copies of the Software in your possession or control. Sections
+2, 3, 4, 6, 7, 8, and 9 shall survive termination.
+
+
+6. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT
+LIMITATION ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, TITLE, ACCURACY, NON-INFRINGEMENT, OR THAT THE SOFTWARE WILL BE
+UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF HARMFUL COMPONENTS. THE
+AUTHOR MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY, RELIABILITY,
+AVAILABILITY, OR ACCURACY OF THE SOFTWARE.
+
+
+7. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL,
+EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA,
+USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THIS LICENSE, WHETHER BASED ON WARRANTY, CONTRACT,
+TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT
+THE AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO
+EVENT SHALL THE AUTHOR'S TOTAL CUMULATIVE LIABILITY TO YOU EXCEED THE
+AMOUNT YOU PAID (IF ANY) FOR THE SOFTWARE, OR FIVE U.S. DOLLARS (USD $5),
+WHICHEVER IS GREATER.
+
+
+8. GOVERNING LAW
+
+This License shall be governed by and construed in accordance with the
+laws of Taiwan (Republic of China), without regard to its conflict of
+laws principles. The courts located in Taipei, Taiwan shall have
+exclusive jurisdiction over any disputes arising out of or relating to
+this License.
+
+
+9. ENTIRE AGREEMENT
+
+This License constitutes the entire agreement between you and the Author
+regarding the Software and supersedes all prior or contemporaneous
+understandings. If any provision of this License is held to be
+unenforceable, the remaining provisions will continue in full force and
+effect. Failure by the Author to enforce any provision of this License
+shall not constitute a waiver of future enforcement of that or any other
+provision.
+
+
+BY DOWNLOADING, INSTALLING, OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT
+YOU HAVE READ THIS LICENSE, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS
+TERMS. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, OR USE THE SOFTWARE.
+
+
+---
+
+繁體中文摘要（僅供參考，法律效力以上述英文正文為準）
+
+本軟體「SocialBuddy · 社群小幫手」著作權屬陳彥輔所有，保留一切權利。
+
+您僅被授權：
+  1. 從官方發佈管道（GitHub / 未來的 Chrome Web Store）下載未經修改的軟體。
+  2. 在您個人擁有或控制的裝置上，以未經修改的形式個人、非商業地安裝與使用本軟體。
+  3. 閱讀隨附文件以便安裝與操作本軟體。
+
+您**不得**：
+  1. 修改、改作、翻譯或創作衍生作品。
+  2. 複製、散佈、鏡像、重新上傳、販售、出租或以任何方式轉讓給第三方。
+  3. 反向工程、反編譯、反組譯或試圖取得原始碼。
+  4. 移除或竄改任何著作權／商標／授權標示。
+  5. 使用「SocialBuddy」或「社群小幫手」名稱或標誌於競爭、仿冒或誤導用途。
+  6. 使用本軟體訓練任何機器學習或 AI 模型。
+
+軟體以「現狀」提供，不提供任何明示或默示之保證。作者對任何間接、附隨、特殊
+或結果性損害不負賠償責任。
+
+本授權依中華民國（台灣）法律解釋，台北地方法院為第一審管轄法院。
+
+一旦您下載、安裝或使用本軟體，即視為您已閱讀、理解並同意遵守本授權條款。

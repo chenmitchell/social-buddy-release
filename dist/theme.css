@@ -1,0 +1,251 @@
+/*
+ * SocialBuddy Theme System — Warm Paper + Terracotta
+ * ─────────────────────────────────────────────────────────────────
+ * Based on design handoff: warm white paper bg, terracotta accent
+ * WCAG AA+ compliant — colorblind-safe (icon+text backup)
+ *
+ * Light: bg #FBF9F4, text #1A1714 (16:1), accent #C45A2C
+ * Dark:  bg #15130F, text #F4EFE4 (15:1), accent #E88A5C
+ */
+
+:root {
+  color-scheme: light;
+}
+
+/* Light theme (default) — Warm Paper */
+:root {
+  --sb-bg: #FBF9F4;
+  --sb-text: #1A1714;
+  --sb-text-muted: #524B40;
+  --sb-border: #E5E0D2;
+  --sb-accent: #C45A2C;
+  --sb-accent-light: #FBE9DC;
+  --sb-accent-fg: #ffffff;
+  --sb-danger: #9A3131;
+  --sb-danger-light: #F6E1DC;
+  --sb-success: #3F6B3A;
+  --sb-success-light: #E6EFDF;
+  --sb-warning: #8A5A00;
+  --sb-warning-light: #FBEFC9;
+  --sb-focus: #C45A2C;
+  --sb-bg-secondary: #F2EEE4;
+  --sb-bg-tertiary: #E8E2D2;
+  /* Additional colors for UI components */
+  --sb-highlight-bg: #FBEFC9;
+  --sb-highlight-text: #1A1714;
+  --sb-search-bg: #FBE9DC;
+  --sb-search-border: #D9A88A;
+  --sb-mode-bg: #FBE9DC;
+  --sb-mode-border: #D9A88A;
+  --sb-mode-hover: #F5D8C4;
+  --sb-reply-badge-bg: #FBE9DC;
+  --sb-reply-badge-text: #7A3412;
+  --sb-parent-quote-bg: #F2EEE4;
+  --sb-thread-reply-bg: #F2EEE4;
+  --sb-thread-reply-border: #E5E0D2;
+  --sb-chip-bg: #FBE9DC;
+  --sb-chip-border: #D9A88A;
+  --sb-history-badge-bg: #FBEFC9;
+  --sb-history-badge-border: #C49A2C;
+  --sb-history-badge-text: #6A4600;
+  --sb-history-badge-hover: #F5E4A0;
+  --sb-diff-add-bg: #E6EFDF;
+  --sb-diff-add-text: #2C4D29;
+  --sb-diff-remove-bg: #F6E1DC;
+  --sb-diff-remove-text: #9A3131;
+  --sb-diff-area-bg: #F2EEE4;
+  --sb-progress-bg: #E5E0D2;
+  --sb-storage-default: #C45A2C;
+  --sb-input-bg: #FFFFFF;
+  --sb-btn-hover-default: #E8E2D2;
+  --sb-btn-hover-light: #F2EEE4;
+  --sb-sched-active: #3F6B3A;
+  --sb-sched-failing: #9A3131;
+  --sb-sched-failing-shadow: #F6E1DC;
+  --sb-sched-paused: #8F8674;
+  --sb-toolbar-bg: #F2EEE4;
+  --sb-post-bg: #FFFFFF;
+  --sb-field-focus-default: #E8E2D2;
+}
+
+/* Dark theme — Warm Dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --sb-bg: #15130F;
+    --sb-text: #F4EFE4;
+    --sb-text-muted: #9A917C;
+    --sb-border: #2E2A22;
+    --sb-accent: #E88A5C;
+    --sb-accent-light: #3A231A;
+    --sb-accent-fg: #ffffff;
+    --sb-danger: #E6A4A4;
+    --sb-danger-light: #2E1A18;
+    --sb-success: #8FC38A;
+    --sb-success-light: #1A2A18;
+    --sb-warning: #F0C868;
+    --sb-warning-light: #2D230E;
+    --sb-focus: #E88A5C;
+    --sb-bg-secondary: #1C1914;
+    --sb-bg-tertiary: #22201A;
+    /* Additional colors for UI components (dark mode) */
+    --sb-highlight-bg: #2D230E;
+    --sb-highlight-text: #F0C868;
+    --sb-search-bg: #3A231A;
+    --sb-search-border: #5C3333;
+    --sb-mode-bg: #3A231A;
+    --sb-mode-border: #5C3A2A;
+    --sb-mode-hover: #4A2E1E;
+    --sb-reply-badge-bg: #3A231A;
+    --sb-reply-badge-text: #F7CDB5;
+    --sb-parent-quote-bg: #22201A;
+    --sb-thread-reply-bg: #1C1914;
+    --sb-thread-reply-border: #2E2A22;
+    --sb-chip-bg: #3A231A;
+    --sb-chip-border: #5C3A2A;
+    --sb-history-badge-bg: #2D230E;
+    --sb-history-badge-border: #5C4A1A;
+    --sb-history-badge-text: #F0C868;
+    --sb-history-badge-hover: #3D2E12;
+    --sb-diff-add-bg: #1A2A18;
+    --sb-diff-add-text: #8FC38A;
+    --sb-diff-remove-bg: #2E1A18;
+    --sb-diff-remove-text: #E6A4A4;
+    --sb-diff-area-bg: #1C1914;
+    --sb-progress-bg: #2E2A22;
+    --sb-storage-default: #E88A5C;
+    --sb-input-bg: #22201A;
+    --sb-btn-hover-default: #2E2A22;
+    --sb-btn-hover-light: #2E2A22;
+    --sb-sched-active: #8FC38A;
+    --sb-sched-failing: #E6A4A4;
+    --sb-sched-failing-shadow: #2E1A18;
+    --sb-sched-paused: #6D6654;
+    --sb-toolbar-bg: #1C1914;
+    --sb-post-bg: #1C1914;
+    --sb-field-focus-default: #2E2A22;
+  }
+}
+
+/* Explicit light theme override */
+html[data-theme="light"] {
+  color-scheme: light;
+  --sb-bg: #FBF9F4;
+  --sb-text: #1A1714;
+  --sb-text-muted: #524B40;
+  --sb-border: #E5E0D2;
+  --sb-accent: #C45A2C;
+  --sb-accent-light: #FBE9DC;
+  --sb-accent-fg: #ffffff;
+  --sb-danger: #9A3131;
+  --sb-danger-light: #F6E1DC;
+  --sb-success: #3F6B3A;
+  --sb-success-light: #E6EFDF;
+  --sb-warning: #8A5A00;
+  --sb-warning-light: #FBEFC9;
+  --sb-focus: #C45A2C;
+  --sb-bg-secondary: #F2EEE4;
+  --sb-bg-tertiary: #E8E2D2;
+  --sb-highlight-bg: #FBEFC9;
+  --sb-highlight-text: #1A1714;
+  --sb-search-bg: #FBE9DC;
+  --sb-search-border: #D9A88A;
+  --sb-mode-bg: #FBE9DC;
+  --sb-mode-border: #D9A88A;
+  --sb-mode-hover: #F5D8C4;
+  --sb-reply-badge-bg: #FBE9DC;
+  --sb-reply-badge-text: #7A3412;
+  --sb-parent-quote-bg: #F2EEE4;
+  --sb-thread-reply-bg: #F2EEE4;
+  --sb-thread-reply-border: #E5E0D2;
+  --sb-chip-bg: #FBE9DC;
+  --sb-chip-border: #D9A88A;
+  --sb-history-badge-bg: #FBEFC9;
+  --sb-history-badge-border: #C49A2C;
+  --sb-history-badge-text: #6A4600;
+  --sb-history-badge-hover: #F5E4A0;
+  --sb-diff-add-bg: #E6EFDF;
+  --sb-diff-add-text: #2C4D29;
+  --sb-diff-remove-bg: #F6E1DC;
+  --sb-diff-remove-text: #9A3131;
+  --sb-diff-area-bg: #F2EEE4;
+  --sb-progress-bg: #E5E0D2;
+  --sb-storage-default: #C45A2C;
+  --sb-input-bg: #FFFFFF;
+  --sb-btn-hover-default: #E8E2D2;
+  --sb-btn-hover-light: #F2EEE4;
+  --sb-sched-active: #3F6B3A;
+  --sb-sched-failing: #9A3131;
+  --sb-sched-failing-shadow: #F6E1DC;
+  --sb-sched-paused: #8F8674;
+  --sb-toolbar-bg: #F2EEE4;
+  --sb-post-bg: #FFFFFF;
+  --sb-field-focus-default: #E8E2D2;
+}
+
+/* Explicit dark theme override */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --sb-bg: #15130F;
+  --sb-text: #F4EFE4;
+  --sb-text-muted: #9A917C;
+  --sb-border: #2E2A22;
+  --sb-accent: #E88A5C;
+  --sb-accent-light: #3A231A;
+  --sb-accent-fg: #ffffff;
+  --sb-danger: #E6A4A4;
+  --sb-danger-light: #2E1A18;
+  --sb-success: #8FC38A;
+  --sb-success-light: #1A2A18;
+  --sb-warning: #F0C868;
+  --sb-warning-light: #2D230E;
+  --sb-focus: #E88A5C;
+  --sb-bg-secondary: #1C1914;
+  --sb-bg-tertiary: #22201A;
+  --sb-highlight-bg: #2D230E;
+  --sb-highlight-text: #F0C868;
+  --sb-search-bg: #3A231A;
+  --sb-search-border: #5C3333;
+  --sb-mode-bg: #3A231A;
+  --sb-mode-border: #5C3A2A;
+  --sb-mode-hover: #4A2E1E;
+  --sb-reply-badge-bg: #3A231A;
+  --sb-reply-badge-text: #F7CDB5;
+  --sb-parent-quote-bg: #22201A;
+  --sb-thread-reply-bg: #1C1914;
+  --sb-thread-reply-border: #2E2A22;
+  --sb-chip-bg: #3A231A;
+  --sb-chip-border: #5C3A2A;
+  --sb-history-badge-bg: #2D230E;
+  --sb-history-badge-border: #5C4A1A;
+  --sb-history-badge-text: #F0C868;
+  --sb-history-badge-hover: #3D2E12;
+  --sb-diff-add-bg: #1A2A18;
+  --sb-diff-add-text: #8FC38A;
+  --sb-diff-remove-bg: #2E1A18;
+  --sb-diff-remove-text: #E6A4A4;
+  --sb-diff-area-bg: #1C1914;
+  --sb-progress-bg: #2E2A22;
+  --sb-storage-default: #E88A5C;
+  --sb-input-bg: #22201A;
+  --sb-btn-hover-default: #2E2A22;
+  --sb-btn-hover-light: #2E2A22;
+  --sb-sched-active: #8FC38A;
+  --sb-sched-failing: #E6A4A4;
+  --sb-sched-failing-shadow: #2E1A18;
+  --sb-sched-paused: #6D6654;
+  --sb-toolbar-bg: #1C1914;
+  --sb-post-bg: #1C1914;
+  --sb-field-focus-default: #2E2A22;
+}
+
+/* ─── Trademark Footer ─────────────────────────────────────────── */
+.sb-trademark {
+  text-align: center;
+  padding: 12px 8px;
+  margin-top: 16px;
+  border-top: 1px solid var(--sb-border, #E5E0D2);
+  color: var(--sb-text-muted, #6F665A);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
