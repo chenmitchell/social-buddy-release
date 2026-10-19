@@ -36,7 +36,7 @@
 
 ### 第一步：安裝擴充功能
 
-1. [下載最新版 ZIP](https://github.com/chenmitchell/social-buddy-release/raw/main/socialbuddy-v1.0.3.zip)
+1. [下載最新版 ZIP](https://github.com/chenmitchell/social-buddy-release/raw/main/socialbuddy-v1.0.10.zip)
 2. 解壓縮到一個資料夾（建議放在不會誤刪的地方）
 3. Chrome 瀏覽器打開 `chrome://extensions/`
 4. 右上角開啟「開發人員模式」

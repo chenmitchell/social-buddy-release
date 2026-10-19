@@ -51,7 +51,7 @@ JSON、CSV、HTML、Excel、PNG，想要什麼格式自己勾。還可以設定�
 
 ### 手動安裝
 
-1. [下載最新版 ZIP](https://github.com/chenmitchell/social-buddy-release/raw/main/socialbuddy-v1.0.6.zip)
+1. [下載最新版 ZIP](https://github.com/chenmitchell/social-buddy-release/raw/main/socialbuddy-v1.0.10.zip)
 2. 解壓縮到一個資料夾
 3. Chrome 打開 `chrome://extensions/`
 4. 右上角開「開發人員模式」
